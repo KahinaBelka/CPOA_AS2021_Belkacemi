@@ -17,9 +17,18 @@ public class Maths implements IMaths {
 
 	@Override
 	public int multiplication(int a, int b) {
-		//Ecrire l'implémentation de multiplication en utilisant que des additions
-		//Tester tous les cas possibles (positifs, négatifs, 0)
-		return a*b ;
+		int result = 0;
+		if(a<0 && b<0) {
+			for(int i = 0; i<-b; i++) {
+				result = addition(result, -a);
+			}
+		}
+		else {
+			for(int i = 0; i<b; i++) {
+				result = addition(result, a);
+			}
+		}
+		return result;
 	}
 
 	@Override
