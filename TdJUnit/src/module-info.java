@@ -1,0 +1,3 @@
+module TdJUnit {
+	requires junit;
+}
