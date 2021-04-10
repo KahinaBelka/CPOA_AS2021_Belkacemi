@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import td1.interfaces.IObserver;
+import interfaces.IObserver;
+
+
 
 public class Observable {
 	
