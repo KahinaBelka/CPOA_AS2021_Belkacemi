@@ -19,47 +19,47 @@ public class MathsTest {
 
 	@Test
 	public void testAdditionCasGeneralNombrePositif() {
-		Assert.assertEquals(maths.addition(2, 3), 5);
+		Assert.assertEquals(maths.addition(6, 3), 9);
 	}
 
 	@Test
 	public void testAdditionCasGeneralNombreNegatif() {
-		Assert.assertEquals(maths.addition(-4, -10), -14);
+		Assert.assertEquals(maths.addition(-8, -10), -18);
 	}
 
 	@Test
 	public void testAdditionCasGeneralNombrePositifEtNegatif() {
-		Assert.assertEquals(maths.addition(-4, 10), 6);
+		Assert.assertEquals(maths.addition(8, -12), -4);
 	}
 
 	@Test
 	public void testSoustractionCasGeneralNombrePositif() {
-		Assert.assertEquals(maths.soustraction(6, 3), 3);
+		Assert.assertEquals(maths.soustraction(5, 8), -3);
 	}
 
 	@Test
 	public void testSoustractionCasGeneralNombreNegatif() {
-		Assert.assertEquals(maths.soustraction(-5, -3), -2);
+		Assert.assertEquals(maths.soustraction(-10, -3), -7);
 	}
 
 	@Test
 	public void testSoustractionCasGeneralNombrePositifEtNegatif() {
-		Assert.assertEquals(maths.soustraction(2, -3), 5);
+		Assert.assertEquals(maths.soustraction(8, -3), 11);
 	}
 
 	@Test
 	public void testMultiplicationCasGeneralNombrePositif() {
-		Assert.assertEquals(maths.multiplication(2, 3), 6);
+		Assert.assertEquals(maths.multiplication(4, 3), 12);
 	}
 
 	@Test
 	public void testMultiplicationCasGeneralNombreNegatif() {
-		Assert.assertEquals(maths.multiplication(-2, -3), 6);
+		Assert.assertEquals(maths.multiplication(-10, -7), 70);
 	}
 
 	@Test
 	public void testMultiplicationCasGeneralNombrePositifetNegatif() {
-		Assert.assertEquals(maths.multiplication(-2, 3), -6);
+		Assert.assertEquals(maths.multiplication(8, -4), -32);
 	}
 
 	@Test
@@ -73,7 +73,7 @@ public class MathsTest {
 			maths.division(4, 0);
 		}
 		catch (MathsExceptions me) {
-			Assert.assertEquals(me.getMessage(), "Division par zéro impossible");
+			Assert.assertEquals(me.getMessage(), "Division par zero impossible");
 			throw me;
 		}
 	}

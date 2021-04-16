@@ -18,9 +18,14 @@ public class Maths implements IMaths {
 	@Override
 	public int multiplication(int a, int b) {
 		int result = 0;
-		if(a<0 && b<0) {
+		if((a<0 && b<0) || (a>0 && b<0)) {
 			for(int i = 0; i<-b; i++) {
 				result = addition(result, -a);
+			}
+		}
+		else if(a<0 && b>0) {
+			for(int i = 0; i<b; i++) {
+				result = addition(result, a);
 			}
 		}
 		else {
