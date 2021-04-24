@@ -1,4 +1,4 @@
-package com.iut.as2021.metier;
+package tests.metier;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.anyInt;
@@ -9,6 +9,7 @@ import org.mockito.Mockito;
 
 import com.iut.as2021.interfaces.IMaths;
 import com.iut.as2021.mathematics.Maths;
+import com.iut.as2021.metier.Calculer;
 
 public class CalculerTestWithSpy {
 

@@ -1,7 +1,9 @@
-package com.iut.as2021.metier;
+package tests.metier;
 
 import com.iut.as2021.interfaces.IMaths;
 import com.iut.as2021.mathematics.Maths;
+import com.iut.as2021.metier.Calculer;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;

@@ -1,4 +1,4 @@
-package com.iut.as2021.mathematics;
+package tests.mathematics;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import com.iut.as2021.exceptions.MathsExceptions;
 import com.iut.as2021.interfaces.IMaths;
-
+import mathematics.Maths;
 
 public class MathsTest {
 

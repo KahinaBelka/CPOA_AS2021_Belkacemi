@@ -1,10 +1,11 @@
-package com.iut.as2021.metier;
+package tests.metier;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import com.iut.as2021.exceptions.MathsExceptions;
+import com.iut.as2021.metier.MathResultat;
 
 public class MathResultatTest {
 
