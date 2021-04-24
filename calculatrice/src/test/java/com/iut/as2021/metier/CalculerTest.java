@@ -30,10 +30,10 @@ public class CalculerTest {
 		assertEquals(calcul.run("2-3"), -1, 0);
 	}
 	
-	@Test
+	/*@Test
 	public void testCasMultiplicationSimple() {
 		calcul.setMaths(mathsMock);
 		Mockito.when(mathsMock.multiplication(anyInt(), anyInt())).thenReturn(6);
 		assertEquals(calcul.run("2*3"), 6, 1);
-	}
+	}*/
 }

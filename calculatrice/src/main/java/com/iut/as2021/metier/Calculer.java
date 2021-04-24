@@ -1,7 +1,9 @@
 package com.iut.as2021.metier;
 
+import com.iut.as2021.exceptions.MathsExceptions;
 import com.iut.as2021.interfaces.IMaths;
 import com.iut.as2021.mathematics.Maths;
+import com.iut.as2021.tools.IutTools;
 
 public class Calculer {
 	
@@ -17,45 +19,25 @@ public class Calculer {
 	
 	public double run(String expression) {
 		
-		int posSigneAddition = expression.indexOf("+");
-		int posSigneSoustraction = expression.indexOf("-");
-		int posSigneMultiplication = expression.indexOf("*");
-		double resultat = 0;
+		int operatorIndex = IutTools.searchOperatorIndex(expression);
+		System.out.println(operatorIndex);
+		double resultat=0;
 		
-		boolean addition = (posSigneAddition>0);
-		boolean soustraction = (posSigneSoustraction>0);
-		boolean multiplication = (posSigneMultiplication>0);
-		
-		if (addition) {
-			String left = getLeftExpression(expression, posSigneAddition);
-			String right = getRightExpression(expression, posSigneAddition);
-			resultat = maths.addition(Integer.valueOf(left), Integer.valueOf(right));
+		if(operatorIndex>0) {
+			String left = IutTools.getLeftExpression(expression, operatorIndex);
+			String right = IutTools.getRightExpression(expression, operatorIndex);
+			String operationSign = Character.valueOf(expression.charAt(operatorIndex)).toString();
+			switch(operationSign) {
+			case "+": resultat = maths.addition(Integer.valueOf(left), Integer.valueOf(right));	break;
+			case "-": resultat = maths.soustraction(Integer.valueOf(left), Integer.valueOf(right));	break;
+			case "*": resultat = maths.multiplication(Integer.valueOf(left), Integer.valueOf(right)); break;
+			//case "/": resultat = maths.division(Integer.valueOf(left), Integer.valueOf(right)); break;
+			default: System.out.println("L'operation n'a pas pu etre effectuee car elle est inconnue"); break;
+			}
 		}
 		
-		else if (soustraction) {
-			String left = getLeftExpression(expression, posSigneSoustraction);
-			String right = getRightExpression(expression, posSigneSoustraction);
-			resultat = maths.soustraction(Integer.valueOf(left), Integer.valueOf(right));
-		}
-		
-		else if (multiplication) {
-			String left = getLeftExpression(expression, posSigneMultiplication);
-			String right = getRightExpression(expression, posSigneMultiplication);
-			resultat = maths.multiplication(Integer.valueOf(left), Integer.valueOf(right));
-		}
-		
-		return resultat;
-			
+		return resultat;		
 	}
 
-	private String getRightExpression(String expression, int pos) {
-		String right = expression.substring(pos+1).trim();
-		return right;
-	}
-
-	private String getLeftExpression(String expression, int pos) {
-		String left = expression.substring(0, pos).trim();
-		return left;
-	}
-
+	
 }
